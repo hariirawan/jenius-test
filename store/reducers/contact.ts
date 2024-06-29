@@ -1,15 +1,21 @@
+import { ResponseContactType } from "@/types/contacts";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState: ResponseContactType = {
   data: [],
+  message: "",
 };
 
 const contactSlice = createSlice({
   name: "contact",
   initialState,
   reducers: {
-    setContacts: (state, action: PayloadAction<any>) => {
-      return { ...state.data, data: [] };
+    setContacts: (state, action: PayloadAction<ResponseContactType>) => {
+      return {
+        ...state.data,
+        data: action.payload?.data,
+        message: action.payload.message,
+      };
     },
   },
 });
