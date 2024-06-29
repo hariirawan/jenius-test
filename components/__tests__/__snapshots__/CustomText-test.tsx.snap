@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomText overrides default color with custom color 1`] = `
+<Text
+  style={
+    [
+      undefined,
+      {
+        "color": "#000",
+        "fontFamily": "Poppins-SemiBold",
+        "fontSize": 20,
+      },
+      null,
+      null,
+      null,
+      {
+        "color": "#F8D51C",
+      },
+    ]
+  }
+>
+  Custom color title text
+</Text>
+`;
+
+exports[`CustomText renders with children 1`] = `
+<Text
+  style={
+    [
+      undefined,
+      null,
+      null,
+      null,
+      null,
+      {
+        "color": "#0E243C",
+      },
+    ]
+  }
+>
+  <Text>
+    Hello
+  </Text>
+   
+  <Text>
+    World!
+  </Text>
+</Text>
+`;
+
+exports[`CustomText renders with custom color 1`] = `
+<Text
+  style={
+    [
+      undefined,
+      null,
+      null,
+      null,
+      null,
+      {
+        "color": "#8BD2BD",
+      },
+    ]
+  }
+>
+  Custom color text
+</Text>
+`;
+
+exports[`CustomText renders with custom style 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontSize": 24,
+        "fontWeight": "bold",
+      },
+      null,
+      null,
+      null,
+      null,
+      {
+        "color": "#0E243C",
+      },
+    ]
+  }
+>
+  Custom style text
+</Text>
+`;
+
+exports[`CustomText renders with custom type 1`] = `
+<Text
+  style={
+    [
+      undefined,
+      {
+        "color": "#000",
+        "fontFamily": "Poppins-SemiBold",
+        "fontSize": 20,
+      },
+      null,
+      null,
+      null,
+      {
+        "color": "#0E243C",
+      },
+    ]
+  }
+>
+  Title text
+</Text>
+`;
+
+exports[`CustomText renders with default props 1`] = `
+<Text
+  style={
+    [
+      undefined,
+      null,
+      null,
+      null,
+      null,
+      {
+        "color": "#0E243C",
+      },
+    ]
+  }
+>
+  Default text
+</Text>
+`;
