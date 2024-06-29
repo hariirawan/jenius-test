@@ -1,10 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
   TypedUseSelectorHook,
   useSelector as useAppSelector,
   useDispatch as useAppDispatch,
 } from "react-redux";
-import rootReducers from "./rootReducer";
+import contact from "./reducers/contact";
+
+const rootReducers = combineReducers({
+  contact,
+});
 
 export type RootState = ReturnType<typeof rootReducers>;
 

@@ -1,18 +1,19 @@
-import { View, Text, StyleSheet, TextProps } from "react-native";
+import { View, Text, StyleSheet, TextStyle, StyleProp } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 
 interface IText {
   color?: "primary" | "secondary" | "light" | "tertiary";
-  type: "title" | "subtitle" | "caption" | "text";
+  type?: "title" | "subtitle" | "caption" | "text";
   children?: React.ReactNode;
-  style?: TextProps;
+  style?: StyleProp<any>;
 }
 
 export default function CustomText(props: IText) {
   return (
     <Text
       style={[
+        props.style,
         props.type === "title" ? styles.title : null,
         props.type === "subtitle" ? styles.subtitle : null,
         props.type === "caption" ? styles.caption : null,
