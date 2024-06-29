@@ -1,14 +1,18 @@
 import { View, Text, FlatList, Image, StyleSheet } from "react-native";
 import React from "react";
+import { useSelector } from "@/store";
+import { ContactType } from "@/types/contacts";
 
 export default function ContactList() {
+  const contacts = useSelector((state) => state.contact);
+
   return (
     <FlatList
       ListHeaderComponent={ListHeaderComponent}
       ItemSeparatorComponent={() => <View style={{ height: 15 }} />}
-      data={Array.from(Array(9))}
+      data={contacts.data}
       renderItem={({ item }) => {
-        return <Contact />;
+        return <Contact {...item} />;
       }}
     />
   );
@@ -22,18 +26,17 @@ const ListHeaderComponent = () => {
   );
 };
 
-const Contact = () => {
+type ContactPropType = ContactType & {};
+
+const Contact = (props: ContactPropType) => {
   return (
     <View style={styles.contact}>
-      <Image
-        source={{
-          uri: "https://images.pexels.com/photos/3756678/pexels-photo-3756678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        }}
-        style={styles.image}
-      />
+      <Image source={{ uri: props.photo }} style={styles.image} />
       <View>
-        <Text style={styles.name}>John Doe</Text>
-        <Text style={styles.phone}>0877654533222</Text>
+        <Text
+          style={styles.name}
+        >{`${props.firstName} ${props.lastName}`}</Text>
+        <Text style={styles.phone}>Age - {props.age}</Text>
       </View>
     </View>
   );

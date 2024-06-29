@@ -1,12 +1,16 @@
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
+import { View, StyleSheet, Dimensions, Image } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 import ContactList from "@/components/ContactList";
 import CustomText from "@/components/CustomText";
+import useCRUD from "@/hooks/useCRUD";
+import { useSelector } from "@/store";
 
 const hScreen = Dimensions.get("screen").height;
 
 export default function index() {
+  useCRUD();
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
